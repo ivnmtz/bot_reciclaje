@@ -1,0 +1,46 @@
+import discord
+import os
+from discord.ext import commands
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix='*', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+@bot.command()
+async def hola(ctx):
+    await ctx.send(
+    f"Hola, soy {bot.user}!, soy un bot que te ayudará en tu tarea de ayudar al medio ambiente.\n"
+    "Te hare una pequeña trivia para probarte y ver cuanto sabes sobre cuidar el medio ambiente.\n"
+    "Responde con *si o con *no si estas listo o no"
+)
+    
+@bot.command()
+async def si(ctx):
+    await ctx.send(
+        """♻️ Aquí tienes 5 ejemplos de qué hacer y qué evitar para cuidar el medio ambiente:
+
+1️⃣ ✅ Usar bolsas reutilizables
+    ❌ Usar bolsas de plástico desechables
+
+2️⃣ ✅ Separar la basura en orgánica e inorgánica
+    ❌ Tirar todo junto sin separar
+
+3️⃣ ✅ Apagar luces que no uses
+    ❌ Dejar luces encendidas todo el día
+
+4️⃣ ✅ Reutilizar frascos de vidrio
+    ❌ Tirar envases reciclables a la basura
+
+5️⃣ ✅ Caminar o usar bicicleta
+    ❌ Usar el coche para trayectos cortos
+        """
+    )
+
+@bot.command()
+async def no(ctx):
+    await ctx.send("De acuerdo que tengas buen dia 🙌👍")
+
+bot.run("pon tu token aquí")
