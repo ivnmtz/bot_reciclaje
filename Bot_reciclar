@@ -13,7 +13,7 @@ async def on_ready():
 async def hola(ctx):
     await ctx.send(
     f"Hola, soy {bot.user}!, soy un bot que te ayudará en tu tarea de ayudar al medio ambiente.\n"
-    "Te hare una pequeña trivia para probarte y ver cuanto sabes sobre cuidar el medio ambiente.\n"
+    "Te dare una lista de recomendaciones para cuidar el medio ambiente y que lo lleves acabo!.\n"
     "Responde con *si o con *no si estas listo o no"
 )
     
